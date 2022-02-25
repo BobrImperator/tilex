@@ -52,7 +52,7 @@ defmodule Tilex.Notifications do
   def handle_cast({:post_created, %Post{} = post}, :nostate) do
     developer = Repo.one(Ecto.assoc(post, :developer))
     channel = Repo.one(Ecto.assoc(post, :channel))
-    url = Helpers.post_url(Endpoint, :show, post)
+    url = "#{Application.get_env(:tilex, :edge_url)}/posts/#{post.slug}"
 
     notifiers()
     |> Enum.each(& &1.post_created(post, developer, channel, url))
