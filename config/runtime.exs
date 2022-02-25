@@ -15,8 +15,6 @@ secret_key_base =
     
 static_url =
   System.get_env("EDGE_URL")
-  |> Kernel.||(System.get_env("HOST"))
-  |> Kernel.||("")
   |> URI.parse()
   |> Map.from_struct()
     
