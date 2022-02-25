@@ -1,5 +1,7 @@
 FROM elixir:1.12.1-alpine AS build
 
+ENV EDGE_URL="https://tilex-test.herokuapp.com"
+
 # install build dependencies
 RUN apk add --no-cache build-base npm git 
 # prepare build dir
