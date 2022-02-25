@@ -42,6 +42,7 @@ config :tilex, :hosted_domain, System.get_env("HOSTED_DOMAIN")
 config :tilex, :guest_author_allowlist, System.get_env("GUEST_AUTHOR_ALLOWLIST")
 config :tilex, :default_twitter_handle, System.get_env("DEFAULT_TWITTER_HANDLE")
 config :tilex, :date_display_tz, System.get_env("DATE_DISPLAY_TZ")
+config :tilex, :slack_endpoint, System.get_env("SLACK_POST_ENDPOINT")
  
 # ## Using releases (Elixir v1.9+)
 #
