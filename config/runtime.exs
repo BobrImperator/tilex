@@ -35,7 +35,8 @@ config :tilex, TilexWeb.Endpoint,
 config :ueberauth, Ueberauth.Strategy.Google.OAuth,
   client_id: System.get_env("GOOGLE_CLIENT_ID"),
   client_secret: System.get_env("GOOGLE_CLIENT_SECRET")
-  
+
+config :tilex, :edge_url, System.get_env("EDGE_URL")
 config :tilex, :organization_name, System.get_env("ORGANIZATION_NAME")
 config :tilex, :canonical_domain, System.get_env("CANONICAL_DOMAIN")
 config :tilex, :hosted_domain, System.get_env("HOSTED_DOMAIN")
