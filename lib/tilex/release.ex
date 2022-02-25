@@ -2,12 +2,6 @@ defmodule Tilex.Release do
   @app :tilex
 
   def migrate do
-    Application.put_env(@app, :minimal, true)
-    {:ok, _} = Application.ensure_all_started(:postgrex)
-    {:ok, _} = Application.ensure_all_started(:ssl)
-
-    :ok = load_app()
-
     for repo <- repos() do
       {:ok, _, _} = Ecto.Migrator.with_repo(repo, &Ecto.Migrator.run(&1, :up, all: true))
     end
